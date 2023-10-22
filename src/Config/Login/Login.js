@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { useNavigate } from 'react-router-dom'
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from "../../images/logo.png";
@@ -31,13 +32,38 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignInSide() {
-  const handleSubmit = (event) => {
+  const [email, setEmail] = React.useState()
+  const [password, setPassword] = React.useState()
+
+  const navigate = useNavigate()
+  const baseUrl = `http://fruitseasonapi-001-site1.atempurl.com/api/auths/login`
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    setEmail(data.get('email'));
+    setPassword(data.get('password'));
+    try {
+      const response = await fetch(baseUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email, password: password }),
+      });
+      const data = await response.json(); // Parse the response body as JSON
+
+      if (response.ok) {
+        localStorage.setItem('user', JSON.stringify(data));
+        navigate('/');
+      } else {
+        console.log('login failed');
+        // You might want to handle the error more specifically based on the response status
+      }
+    } catch (error) {
+      console.error('Error calling API:', error);
+    }
+
   };
 
   return (
