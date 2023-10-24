@@ -40,9 +40,6 @@ export default function SignInSide() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    setEmail(data.get('email'));
-    setPassword(data.get('password'));
     try {
       const response = await fetch(baseUrl, {
         method: 'POST',
@@ -114,6 +111,7 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                onChange={text => setEmail(text)}
               />
               <TextField
                 margin="normal"
@@ -124,6 +122,7 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={text => setPassword(text)}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
