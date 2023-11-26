@@ -1,151 +1,74 @@
-import { Grid } from "@mui/material";
-import React from "react";
-import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
-import PhoneCallbackOutlinedIcon from "@mui/icons-material/PhoneCallbackOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import { SocialIcon } from "react-social-icons";
-import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import React from 'react'
+import { Link } from 'react-router-dom'
 export default function Footer() {
-  return (
-    <div style={{ backgroundColor: "white", minHeight: "35vh", marginTop: "40px", borderTop: "0.5px solid"}}>
-      <Grid container sx={{pt:4}}>
-      <Grid item xs={4} sx={{marginLeft: "50px"}}>
-      <div style={{marginBottom: "10px", color: "#6cc51d", fontSize: "25px", fontWeight: "bold"}}>Fruit Season</div>
-        <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-              }}
-            >
-              <div>
-                <LocationOnOutlinedIcon
-                  fontSize="small"
-                  sx={{ pt: 0.5, mr: 1 }}
-                />
-              </div>
-              <div>Địa chỉ</div>
-            </div>
-          <address>
-            121, Clear Water Bay Road
-            <br />
-            Clear Water Bay, Kowloon
-            <br />
-            HONG KONG
-            <br />
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-              }}
-            >
-              <div>
-                <PhoneCallbackOutlinedIcon
-                  fontSize="small"
-                  sx={{ pt: 0.5, mr: 1 }}
-                />
-              </div>
-              <div>: +852 1234 5678</div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-              }}
-            >
-              <div>
-                <EmailOutlinedIcon fontSize="small" sx={{ pt: 0.5, mr: 1 }} />
-              </div>
-              <div>: confusion@food.net</div>
-            </div>
-          </address>
-        </Grid>
-        <Grid item xs={3}>
-        <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-              }}
-            >
-              <div style={{color: "Black"}}>Links</div>
-            </div>
-          <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                marginTop: "20px"
-              }}
-            >
-              <div style={{fontWeight: "bold",}}>Home</div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                marginTop: "10px"
-              }}
-            >
-              <div style={{fontWeight: "bold",}}>Shop</div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                marginTop: "10px"
-              }}
-            >
-              <div style={{fontWeight: "bold",}}>About</div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                marginTop: "10px"
-              }}
-            >
-              <div >Contact</div>
-            </div>
-          </div>
-        </Grid>
-        
+    return (
+        <footer
+            className="text-center text-lg-start text-black"
+            style={{ backgroundColor: '#ffffff' }}
+        >
+            <div className="container pb-5">
+                <section style={{ borderBottom: '1px solid #000000' }} className="py-5">
+                    <div className="row">
+                        <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h6 className="mb-4" style={{ color: '#6cc51d', fontSize: '25px', fontWeight: 'bold' }}>
+                                Fruit Season
+                            </h6>
+                            <p>Welcome to the vibrant world of fruit season, where nature's bounty brings forth a symphony of flavors and colors! Join us as we celebrate the succulent sweetness and refreshing tang of seasonal fruits
+                            </p>
+                        </div>
 
-        <Grid item xs={2}>
-          <SocialIcon
-            url="https://www.facebook.com/"
-            target="_blank"
-            style={{ height: 40, width: 40, color: "#ffffff", marginRight:"5px" }}
-          />
-          <SocialIcon
-            url="https://www.youtube.com/"
-            target="_blank"
-            style={{ height: 40, width: 40, marginRight:"5px" }}
-          />
-          <SocialIcon
-            url="https://gmail.com/"
-            target="_blank"
-            style={{ height: 40, width: 40, marginRight:"5px" }}
-          />
-          <SocialIcon
-            url="https://twitter.com/"
-            target="_blank"
-            style={{ height: 40, width: 40, marginRight:"5px" }}
-          />
-          <SocialIcon
-            url="https://tiktok.com/"
-            target="_blank"
-            style={{ height: 40, width: 40 }}
-          />
-        </Grid>
-      </Grid>
-    </div>
-  );
+                        <hr className="w-100 d-md-none" />
+                        <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>Home</Link>
+                            </p>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>Cart</Link>
+                            </p>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>About</Link>
+                            </p>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>Contact</Link>
+                            </p>
+                        </div>
+                        <hr className="w-100 d-md-none" />
+                        <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 className="text-uppercase mb-4 font-weight-bold">
+                                Useful links
+                            </h6>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>Returns</Link>
+                            </p>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>Shipping Policy</Link>
+                            </p>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>Privacy Policy</Link>
+                            </p>
+                            <p>
+                                <Link style={{ color: 'inherit', textDecoration: 'inherit' }}>Term of Service</Link>
+                            </p>
+                        </div>
+                        <hr className="w-100 d-md-none" />
+                        <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                            <p><i className="fas mr-3"></i> New York, NY 10012, US</p>
+                            <p><i className="fas mr-3"></i> info@gmail.com</p>
+                        </div>
+                    </div>
+                </section>
+                <section className="p-3 pt-0">
+                    <div className="row d-flex align-items-center">
+                        <div className="col-md-7 col-lg-8 text-center text-md-start">
+                            <div className="p-3">
+                                © 2020 Copyright
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </footer>
+    )
 }
